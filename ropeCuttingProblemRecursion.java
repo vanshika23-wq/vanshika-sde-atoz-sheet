@@ -4,17 +4,18 @@ public class ropeCuttingProblemRecursion {
         if (n == 0) return 0;
         if (n < 0) return -1;
 
-        if (memo[n] != 0) {
-            return memo[n];
-        }
+       // if (memo[n] != 0) {
+       //     return memo[n];
+     //   }
 
         int r = Math.max(Math.max(res(n - a, a, b, c, memo), res(n - b, a, b, c, memo)), res(n - c, a, b, c, memo));
         if (r == -1) {
-            memo[n] = -1;
+     //       memo[n] = -1;
             return -1;
         }
-        memo[n] = r + 1;
-        return memo[n];
+     //   memo[n] = r + 1;
+        r+=1;
+        return r;
     }
 
     public static void main(String[] args) {
